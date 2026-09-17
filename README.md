@@ -1,0 +1,36 @@
+# Foundation Demo
+
+Persistent live demo and canary consumer for the Laptop Club Foundation framework.
+
+- Framework: https://github.com/laptopclub/foundation
+- Production site: https://foundation-gold.vercel.app
+- Hosted Studio: https://foundation-demo.sanity.studio
+
+## Setup
+
+A GitHub token with `read:packages` access is required as `NPM_TOKEN`.
+
+```bash
+export NPM_TOKEN=your-github-package-token
+pnpm install
+cp .env.example .env.local
+pnpm dev
+```
+
+Open:
+
+- Site: http://localhost:3333
+- Embedded Studio: http://localhost:3333/studio
+
+## Validation
+
+```bash
+pnpm check
+pnpm build
+```
+
+## Framework upgrades
+
+Foundation packages are installed from GitHub Packages under the `@laptopclub` scope. Upgrade them together so CMS schemas and frontend renderers remain compatible. Validate upgrades through a Vercel preview before merging to `main`.
+
+Site-specific schemas are composed in `sanity/schema-types.ts`. Site-specific renderers are composed in `lib/blocks.ts`. Reusable changes belong in `laptopclub/foundation` rather than this repository.
