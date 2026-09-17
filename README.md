@@ -8,14 +8,16 @@ Persistent live demo and canary consumer for the Laptop Club Foundation framewor
 
 ## Setup
 
-A GitHub token with `read:packages` access is required as `NPM_TOKEN`.
+A GitHub token with `read:packages` access is required. Authenticate once through npm without committing the token:
 
 ```bash
-export NPM_TOKEN=your-github-package-token
+npm login --scope=@laptopclub --auth-type=legacy --registry=https://npm.pkg.github.com
 pnpm install
 cp .env.example .env.local
 pnpm dev
 ```
+
+Use your GitHub username and package token when prompted. Vercel stores the token as `NPM_TOKEN` and runs `scripts/vercel-install.mjs` during installation.
 
 Open:
 
