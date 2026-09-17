@@ -36,3 +36,5 @@ pnpm build
 Foundation packages are installed from GitHub Packages under the `@laptopclub` scope. Upgrade them together so CMS schemas and frontend renderers remain compatible. Validate upgrades through a Vercel preview before merging to `main`.
 
 Site-specific schemas are composed in `sanity/schema-types.ts`. Site-specific renderers are composed in `lib/blocks.ts`. Reusable changes belong in `laptopclub/foundation` rather than this repository.
+
+Dependabot checks for Foundation package updates every Monday. Compatible package updates are grouped into one pull request, which must pass CI and receive a Vercel preview review before merging. Major updates remain separate and require explicit migration review.
