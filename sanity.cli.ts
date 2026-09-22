@@ -13,7 +13,7 @@ export default defineCliConfig({
   },
   typegen: {
     generates: "./sanity.types.ts",
-    path: ["./app/**/*.{ts,tsx}", "./lib/**/*.{ts,tsx}", "../../packages/cms/src/**/*.{ts,tsx}"],
+    path: ["./app/**/*.{ts,tsx}", "./lib/**/*.{ts,tsx}"],
     schema: "./schema.json"
   }
 });

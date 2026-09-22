@@ -1,6 +1,6 @@
 import { siteSettingsQuery } from "@laptopclub/foundation-cms/queries";
 import type { SiteChrome } from "@laptopclub/foundation-ui";
-import type { SiteSettingsQueryResult } from "../sanity.types";
+import type { SiteSettingsQueryResult } from "./sanity-query-types";
 import { env } from "./env";
 import { sanityFetch } from "./live";
 

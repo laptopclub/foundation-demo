@@ -24,6 +24,8 @@ Open:
 - Site: http://localhost:3333
 - Embedded Studio: http://localhost:3333/studio
 
+Sanity Presentation requires `SANITY_API_READ_TOKEN` in `.env.local`. Without it, `/api/draft-mode/enable` cannot validate the Presentation secret and the preview iframe will report that `@sanity/visual-editing` is not set up.
+
 ## Validation
 
 ```bash
