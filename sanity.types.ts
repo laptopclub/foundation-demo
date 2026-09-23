@@ -17,24 +17,13 @@ export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: schema.json
 export type RichTextBlock = {
   _type: "richTextBlock";
-  content?: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
-    listItem?: "bullet" | "number";
-    markDefs?: Array<{
-      href?: string;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  }>;
+  eyebrow?: string;
+  title?: string;
+  content?: PortableContent;
+  width?: "narrow" | "standard" | "wide";
+  background?: "plain" | "light" | "brand" | "dark";
+  spacing?: "compact" | "standard" | "tall";
+  textSize?: "standard" | "large";
 };
 
 export type FaqBlock = {
@@ -128,7 +117,53 @@ export type HeroBlock = {
   body?: string;
   image?: ImageWithAlt;
   cta?: Link;
+  layout?: "textOnly" | "imageRight" | "imageLeft" | "backgroundImage";
+  textAlign?: "left" | "center" | "right";
+  verticalAlign?: "top" | "center" | "bottom";
+  typographyScale?: "standard" | "large" | "editorial";
+  backgroundStyle?: "dark" | "light" | "brand" | "gradient";
+  verticalSpacing?: "compact" | "standard" | "tall" | "fullViewport";
 };
+
+export type PageReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "page";
+};
+
+export type PortableContent = Array<
+  | {
+      children?: Array<{
+        marks?: Array<string>;
+        text?: string;
+        _type: "span";
+        _key: string;
+      }>;
+      style?: "normal" | "h2" | "h3" | "h4" | "blockquote";
+      listItem?: "bullet" | "number";
+      markDefs?: Array<
+        | {
+            href?: string;
+            openInNewTab?: boolean;
+            _type: "externalLink";
+            _key: string;
+          }
+        | {
+            page?: PageReference;
+            openInNewTab?: boolean;
+            _type: "internalLink";
+            _key: string;
+          }
+      >;
+      level?: number;
+      _type: "block";
+      _key: string;
+    }
+  | ({
+      _key: string;
+    } & ImageWithAlt)
+>;
 
 export type SanityImageAssetReference = {
   _ref: string;
@@ -152,13 +187,6 @@ export type Seo = {
   title?: string;
   description?: string;
   noIndex?: boolean;
-};
-
-export type PageReference = {
-  _ref: string;
-  _type: "reference";
-  _weak?: boolean;
-  [internalGroqTypeReferenceTo]?: "page";
 };
 
 export type Link = {
@@ -364,10 +392,11 @@ export type AllSanitySchemaTypes =
   | FeatureGridBlock
   | CtaBlock
   | HeroBlock
+  | PageReference
+  | PortableContent
   | SanityImageAssetReference
   | ImageWithAlt
   | Seo
-  | PageReference
   | Link
   | SiteSettings
   | Page
@@ -382,400 +411,3 @@ export type AllSanitySchemaTypes =
   | SanityAssetSourceData
   | SanityImageAsset
   | Geopoint;
-
-// Source: ../../packages/cms/src/queries/index.ts
-// Variable: imageFields
-// Query: {  ...,  asset->{    _id,    metadata{      dimensions{        aspectRatio,        height,        width      },      lqip    }  }}
-export type ImageFieldsResult = never;
-
-// Source: ../../packages/cms/src/queries/index.ts
-// Variable: linkFields
-// Query: {  label,  openInNewTab,  "href": select(    page->slug.current == "home" => "/",    defined(page->slug.current) => "/" + page->slug.current,    href  )}
-export type LinkFieldsResult = {
-  label: never;
-  openInNewTab: never;
-  href: never;
-};
-
-// Source: ../../packages/cms/src/queries/index.ts
-// Variable: pageBySlugQuery
-// Query: *[_type == "page" && slug.current == $slug][0]{  title,  "slug": slug.current,  seo,  blocks[]{    ...,    cta {  label,  openInNewTab,  "href": select(    page->slug.current == "home" => "/",    defined(page->slug.current) => "/" + page->slug.current,    href  )},    primaryAction {  label,  openInNewTab,  "href": select(    page->slug.current == "home" => "/",    defined(page->slug.current) => "/" + page->slug.current,    href  )},    secondaryAction {  label,  openInNewTab,  "href": select(    page->slug.current == "home" => "/",    defined(page->slug.current) => "/" + page->slug.current,    href  )},    action {  label,  openInNewTab,  "href": select(    page->slug.current == "home" => "/",    defined(page->slug.current) => "/" + page->slug.current,    href  )},    image {  ...,  asset->{    _id,    metadata{      dimensions{        aspectRatio,        height,        width      },      lqip    }  }},    avatar {  ...,  asset->{    _id,    metadata{      dimensions{        aspectRatio,        height,        width      },      lqip    }  }},    features[]{      ...,      image {  ...,  asset->{    _id,    metadata{      dimensions{        aspectRatio,        height,        width      },      lqip    }  }}    },    images[] {  ...,  asset->{    _id,    metadata{      dimensions{        aspectRatio,        height,        width      },      lqip    }  }},    logos[]{      ...,      image {  ...,  asset->{    _id,    metadata{      dimensions{        aspectRatio,        height,        width      },      lqip    }  }}    }  }}
-export type PageBySlugQueryResult = {
-  title: string | null;
-  slug: string | null;
-  seo: Seo | null;
-  blocks: Array<
-    | {
-        _key: string;
-        _type: "ctaBlock";
-        eyebrow?: string;
-        title?: string;
-        body?: string;
-        primaryAction: {
-          label: string | null;
-          openInNewTab: boolean | null;
-          href: string | "/" | null;
-        } | null;
-        secondaryAction: {
-          label: string | null;
-          openInNewTab: boolean | null;
-          href: string | "/" | null;
-        } | null;
-        cta: null;
-        action: null;
-        image: null;
-        avatar: null;
-        features: null;
-        images: null;
-        logos: null;
-      }
-    | {
-        _key: string;
-        _type: "faqBlock";
-        title?: string;
-        items?: Array<{
-          question?: string;
-          answer?: string;
-          _key: string;
-        }>;
-        cta: null;
-        primaryAction: null;
-        secondaryAction: null;
-        action: null;
-        image: null;
-        avatar: null;
-        features: null;
-        images: null;
-        logos: null;
-      }
-    | {
-        _key: string;
-        _type: "featureGridBlock";
-        eyebrow?: string;
-        title?: string;
-        body?: string;
-        features: Array<{
-          title?: string;
-          body?: string;
-          image: {
-            _type: "imageWithAlt";
-            asset: {
-              _id: string;
-              metadata: {
-                dimensions: {
-                  aspectRatio: number | null;
-                  height: number | null;
-                  width: number | null;
-                } | null;
-                lqip: string | null;
-              } | null;
-            } | null;
-            media?: unknown;
-            hotspot?: SanityImageHotspot;
-            crop?: SanityImageCrop;
-            alt?: string;
-            caption?: string;
-          } | null;
-          _key: string;
-        }> | null;
-        cta: null;
-        primaryAction: null;
-        secondaryAction: null;
-        action: null;
-        image: null;
-        avatar: null;
-        images: null;
-        logos: null;
-      }
-    | {
-        _key: string;
-        _type: "fullWidthMediaBlock";
-        eyebrow?: string;
-        title?: string;
-        body?: string;
-        image: {
-          _type: "imageWithAlt";
-          asset: {
-            _id: string;
-            metadata: {
-              dimensions: {
-                aspectRatio: number | null;
-                height: number | null;
-                width: number | null;
-              } | null;
-              lqip: string | null;
-            } | null;
-          } | null;
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          caption?: string;
-        } | null;
-        action: {
-          label: string | null;
-          openInNewTab: boolean | null;
-          href: string | "/" | null;
-        } | null;
-        background?: "brand" | "dark" | "plain";
-        textAlign?: "center" | "left" | "right";
-        cta: null;
-        primaryAction: null;
-        secondaryAction: null;
-        avatar: null;
-        features: null;
-        images: null;
-        logos: null;
-      }
-    | {
-        _key: string;
-        _type: "galleryBlock";
-        eyebrow?: string;
-        title?: string;
-        body?: string;
-        images: Array<{
-          _key: string;
-          _type: "imageWithAlt";
-          asset: {
-            _id: string;
-            metadata: {
-              dimensions: {
-                aspectRatio: number | null;
-                height: number | null;
-                width: number | null;
-              } | null;
-              lqip: string | null;
-            } | null;
-          } | null;
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          caption?: string;
-        }> | null;
-        cta: null;
-        primaryAction: null;
-        secondaryAction: null;
-        action: null;
-        image: null;
-        avatar: null;
-        features: null;
-        logos: null;
-      }
-    | {
-        _key: string;
-        _type: "heroBlock";
-        eyebrow?: string;
-        title?: string;
-        body?: string;
-        image: {
-          _type: "imageWithAlt";
-          asset: {
-            _id: string;
-            metadata: {
-              dimensions: {
-                aspectRatio: number | null;
-                height: number | null;
-                width: number | null;
-              } | null;
-              lqip: string | null;
-            } | null;
-          } | null;
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          caption?: string;
-        } | null;
-        cta: {
-          label: string | null;
-          openInNewTab: boolean | null;
-          href: string | "/" | null;
-        } | null;
-        primaryAction: null;
-        secondaryAction: null;
-        action: null;
-        avatar: null;
-        features: null;
-        images: null;
-        logos: null;
-      }
-    | {
-        _key: string;
-        _type: "imageTextBlock";
-        eyebrow?: string;
-        title?: string;
-        body?: string;
-        image: {
-          _type: "imageWithAlt";
-          asset: {
-            _id: string;
-            metadata: {
-              dimensions: {
-                aspectRatio: number | null;
-                height: number | null;
-                width: number | null;
-              } | null;
-              lqip: string | null;
-            } | null;
-          } | null;
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          caption?: string;
-        } | null;
-        action: {
-          label: string | null;
-          openInNewTab: boolean | null;
-          href: string | "/" | null;
-        } | null;
-        imagePosition?: "left" | "right";
-        cta: null;
-        primaryAction: null;
-        secondaryAction: null;
-        avatar: null;
-        features: null;
-        images: null;
-        logos: null;
-      }
-    | {
-        _key: string;
-        _type: "logoCloudBlock";
-        title?: string;
-        logos: Array<{
-          name?: string;
-          image: {
-            _type: "imageWithAlt";
-            asset: {
-              _id: string;
-              metadata: {
-                dimensions: {
-                  aspectRatio: number | null;
-                  height: number | null;
-                  width: number | null;
-                } | null;
-                lqip: string | null;
-              } | null;
-            } | null;
-            media?: unknown;
-            hotspot?: SanityImageHotspot;
-            crop?: SanityImageCrop;
-            alt?: string;
-            caption?: string;
-          } | null;
-          url?: string;
-          _key: string;
-        }> | null;
-        cta: null;
-        primaryAction: null;
-        secondaryAction: null;
-        action: null;
-        image: null;
-        avatar: null;
-        features: null;
-        images: null;
-      }
-    | {
-        _key: string;
-        _type: "richTextBlock";
-        content?: Array<{
-          children?: Array<{
-            marks?: Array<string>;
-            text?: string;
-            _type: "span";
-            _key: string;
-          }>;
-          style?:
-            "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
-          listItem?: "bullet" | "number";
-          markDefs?: Array<{
-            href?: string;
-            _type: "link";
-            _key: string;
-          }>;
-          level?: number;
-          _type: "block";
-          _key: string;
-        }>;
-        cta: null;
-        primaryAction: null;
-        secondaryAction: null;
-        action: null;
-        image: null;
-        avatar: null;
-        features: null;
-        images: null;
-        logos: null;
-      }
-    | {
-        _key: string;
-        _type: "testimonialBlock";
-        quote?: string;
-        avatar: {
-          _type: "imageWithAlt";
-          asset: {
-            _id: string;
-            metadata: {
-              dimensions: {
-                aspectRatio: number | null;
-                height: number | null;
-                width: number | null;
-              } | null;
-              lqip: string | null;
-            } | null;
-          } | null;
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          caption?: string;
-        } | null;
-        name?: string;
-        role?: string;
-        cta: null;
-        primaryAction: null;
-        secondaryAction: null;
-        action: null;
-        image: null;
-        features: null;
-        images: null;
-        logos: null;
-      }
-  > | null;
-} | null;
-
-// Source: ../../packages/cms/src/queries/index.ts
-// Variable: allPageSlugsQuery
-// Query: *[_type == "page" && defined(slug.current)][]{  "slug": slug.current}
-export type AllPageSlugsQueryResult = Array<{
-  slug: string | null;
-}>;
-
-// Source: ../../packages/cms/src/queries/index.ts
-// Variable: sitemapPagesQuery
-// Query: *[_type == "page" && defined(slug.current) && seo.noIndex != true]{  _updatedAt,  "slug": slug.current}
-export type SitemapPagesQueryResult = Array<{
-  _updatedAt: string;
-  slug: string | null;
-}>;
-
-// Source: ../../packages/cms/src/queries/index.ts
-// Variable: siteSettingsQuery
-// Query: *[_type == "siteSettings"][0]{  title,  description,  logoText,  primaryNavigation[] {  label,  openInNewTab,  "href": select(    page->slug.current == "home" => "/",    defined(page->slug.current) => "/" + page->slug.current,    href  )},  footerNavigation[] {  label,  openInNewTab,  "href": select(    page->slug.current == "home" => "/",    defined(page->slug.current) => "/" + page->slug.current,    href  )}}
-export type SiteSettingsQueryResult = {
-  title: string | null;
-  description: string | null;
-  logoText: string | null;
-  primaryNavigation: Array<{
-    label: string | null;
-    openInNewTab: boolean | null;
-    href: string | "/" | null;
-  }> | null;
-  footerNavigation: Array<{
-    label: string | null;
-    openInNewTab: boolean | null;
-    href: string | "/" | null;
-  }> | null;
-} | null;
-

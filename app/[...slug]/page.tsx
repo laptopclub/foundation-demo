@@ -6,7 +6,7 @@ import { siteBlockRegistry } from "../../lib/blocks";
 import { env } from "../../lib/env";
 import { sanityFetch } from "../../lib/live";
 import { getSiteSettings } from "../../lib/site";
-import type { AllPageSlugsQueryResult, PageBySlugQueryResult } from "../../sanity.types";
+import type { AllPageSlugsQueryResult, PageBySlugQueryResult } from "../../lib/sanity-query-types";
 
 type PageData = NonNullable<PageBySlugQueryResult>;
 

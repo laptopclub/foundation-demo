@@ -1,7 +1,7 @@
 import { pageBySlugQuery } from "@laptopclub/foundation-cms/queries";
 import { BlockRenderer, type PageBlock } from "@laptopclub/foundation-ui";
 import type { Metadata } from "next";
-import type { PageBySlugQueryResult } from "../sanity.types";
+import type { PageBySlugQueryResult } from "../lib/sanity-query-types";
 import { siteBlockRegistry } from "../lib/blocks";
 import { env } from "../lib/env";
 import { sanityFetch } from "../lib/live";
