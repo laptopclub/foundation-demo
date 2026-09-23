@@ -17,6 +17,7 @@ export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: schema.json
 export type RichTextBlock = {
   _type: "richTextBlock";
+  sectionId?: string;
   eyebrow?: string;
   title?: string;
   content?: PortableContent;
@@ -28,6 +29,7 @@ export type RichTextBlock = {
 
 export type FaqBlock = {
   _type: "faqBlock";
+  sectionId?: string;
   title?: string;
   items?: Array<{
     question?: string;
@@ -38,6 +40,7 @@ export type FaqBlock = {
 
 export type LogoCloudBlock = {
   _type: "logoCloudBlock";
+  sectionId?: string;
   title?: string;
   logos?: Array<{
     name?: string;
@@ -49,6 +52,7 @@ export type LogoCloudBlock = {
 
 export type TestimonialBlock = {
   _type: "testimonialBlock";
+  sectionId?: string;
   quote?: string;
   avatar?: ImageWithAlt;
   name?: string;
@@ -57,6 +61,7 @@ export type TestimonialBlock = {
 
 export type FullWidthMediaBlock = {
   _type: "fullWidthMediaBlock";
+  sectionId?: string;
   eyebrow?: string;
   title?: string;
   body?: string;
@@ -68,6 +73,7 @@ export type FullWidthMediaBlock = {
 
 export type GalleryBlock = {
   _type: "galleryBlock";
+  sectionId?: string;
   eyebrow?: string;
   title?: string;
   body?: string;
@@ -80,6 +86,7 @@ export type GalleryBlock = {
 
 export type ImageTextBlock = {
   _type: "imageTextBlock";
+  sectionId?: string;
   eyebrow?: string;
   title?: string;
   body?: string;
@@ -90,6 +97,7 @@ export type ImageTextBlock = {
 
 export type FeatureGridBlock = {
   _type: "featureGridBlock";
+  sectionId?: string;
   eyebrow?: string;
   title?: string;
   body?: string;
@@ -103,6 +111,7 @@ export type FeatureGridBlock = {
 
 export type CtaBlock = {
   _type: "ctaBlock";
+  sectionId?: string;
   eyebrow?: string;
   title?: string;
   body?: string;
@@ -112,6 +121,7 @@ export type CtaBlock = {
 
 export type HeroBlock = {
   _type: "heroBlock";
+  sectionId?: string;
   eyebrow?: string;
   title?: string;
   body?: string;
