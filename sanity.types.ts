@@ -17,24 +17,13 @@ export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: schema.json
 export type RichTextBlock = {
   _type: "richTextBlock";
-  content?: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
-    listItem?: "bullet" | "number";
-    markDefs?: Array<{
-      href?: string;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  }>;
+  eyebrow?: string;
+  title?: string;
+  content?: PortableContent;
+  width?: "narrow" | "standard" | "wide";
+  background?: "plain" | "light" | "brand" | "dark";
+  spacing?: "compact" | "standard" | "tall";
+  textSize?: "standard" | "large";
 };
 
 export type FaqBlock = {
@@ -136,6 +125,46 @@ export type HeroBlock = {
   verticalSpacing?: "compact" | "standard" | "tall" | "fullViewport";
 };
 
+export type PageReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "page";
+};
+
+export type PortableContent = Array<
+  | {
+      children?: Array<{
+        marks?: Array<string>;
+        text?: string;
+        _type: "span";
+        _key: string;
+      }>;
+      style?: "normal" | "h2" | "h3" | "h4" | "blockquote";
+      listItem?: "bullet" | "number";
+      markDefs?: Array<
+        | {
+            href?: string;
+            openInNewTab?: boolean;
+            _type: "externalLink";
+            _key: string;
+          }
+        | {
+            page?: PageReference;
+            openInNewTab?: boolean;
+            _type: "internalLink";
+            _key: string;
+          }
+      >;
+      level?: number;
+      _type: "block";
+      _key: string;
+    }
+  | ({
+      _key: string;
+    } & ImageWithAlt)
+>;
+
 export type SanityImageAssetReference = {
   _ref: string;
   _type: "reference";
@@ -158,13 +187,6 @@ export type Seo = {
   title?: string;
   description?: string;
   noIndex?: boolean;
-};
-
-export type PageReference = {
-  _ref: string;
-  _type: "reference";
-  _weak?: boolean;
-  [internalGroqTypeReferenceTo]?: "page";
 };
 
 export type Link = {
@@ -370,10 +392,11 @@ export type AllSanitySchemaTypes =
   | FeatureGridBlock
   | CtaBlock
   | HeroBlock
+  | PageReference
+  | PortableContent
   | SanityImageAssetReference
   | ImageWithAlt
   | Seo
-  | PageReference
   | Link
   | SiteSettings
   | Page
