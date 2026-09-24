@@ -30,6 +30,10 @@ export type RichTextBlock = {
 export type FaqBlock = {
   _type: "faqBlock";
   sectionId?: string;
+  background?: "plain" | "light" | "brand" | "dark";
+  spacing?: "compact" | "standard" | "tall";
+  width?: "narrow" | "standard" | "wide";
+  textAlign?: "left" | "center" | "right";
   title?: string;
   items?: Array<{
     question?: string;
@@ -41,6 +45,10 @@ export type FaqBlock = {
 export type LogoCloudBlock = {
   _type: "logoCloudBlock";
   sectionId?: string;
+  background?: "plain" | "light" | "brand" | "dark";
+  spacing?: "compact" | "standard" | "tall";
+  width?: "narrow" | "standard" | "wide";
+  textAlign?: "left" | "center" | "right";
   title?: string;
   logos?: Array<{
     name?: string;
@@ -53,6 +61,10 @@ export type LogoCloudBlock = {
 export type TestimonialBlock = {
   _type: "testimonialBlock";
   sectionId?: string;
+  background?: "plain" | "light" | "brand" | "dark";
+  spacing?: "compact" | "standard" | "tall";
+  width?: "narrow" | "standard" | "wide";
+  textAlign?: "left" | "center" | "right";
   quote?: string;
   avatar?: ImageWithAlt;
   name?: string;
@@ -112,6 +124,10 @@ export type FeatureGridBlock = {
 export type CtaBlock = {
   _type: "ctaBlock";
   sectionId?: string;
+  background?: "plain" | "light" | "brand" | "dark";
+  spacing?: "compact" | "standard" | "tall";
+  width?: "narrow" | "standard" | "wide";
+  textAlign?: "left" | "center" | "right";
   eyebrow?: string;
   title?: string;
   body?: string;
