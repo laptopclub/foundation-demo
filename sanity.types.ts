@@ -74,18 +74,26 @@ export type TestimonialBlock = {
 export type FullWidthMediaBlock = {
   _type: "fullWidthMediaBlock";
   sectionId?: string;
+  background?: "plain" | "light" | "brand" | "dark";
+  spacing?: "compact" | "standard" | "tall";
+  width?: "narrow" | "standard" | "wide";
+  textAlign?: "left" | "center" | "right";
   eyebrow?: string;
   title?: string;
   body?: string;
   image?: ImageWithAlt;
   action?: Link;
-  background?: "plain" | "brand" | "dark";
-  textAlign?: "left" | "center" | "right";
 };
 
 export type GalleryBlock = {
   _type: "galleryBlock";
   sectionId?: string;
+  background?: "plain" | "light" | "brand" | "dark";
+  spacing?: "compact" | "standard" | "tall";
+  width?: "narrow" | "standard" | "wide";
+  textAlign?: "left" | "center" | "right";
+  columns?: "2" | "3" | "4";
+  imageRatio?: "square" | "landscape" | "portrait" | "wide";
   eyebrow?: string;
   title?: string;
   body?: string;
@@ -99,17 +107,30 @@ export type GalleryBlock = {
 export type ImageTextBlock = {
   _type: "imageTextBlock";
   sectionId?: string;
+  background?: "plain" | "light" | "brand" | "dark";
+  spacing?: "compact" | "standard" | "tall";
+  width?: "narrow" | "standard" | "wide";
+  textAlign?: "left" | "center" | "right";
+  verticalAlign?: "top" | "center" | "bottom";
+  imageRatio?: "square" | "landscape" | "portrait" | "wide";
+  imageShape?: "square" | "rounded" | "soft";
   eyebrow?: string;
   title?: string;
   body?: string;
   image?: ImageWithAlt;
   action?: Link;
-  imagePosition?: "left" | "right";
+  imagePosition?: "left" | "right" | "alternate";
 };
 
 export type FeatureGridBlock = {
   _type: "featureGridBlock";
   sectionId?: string;
+  background?: "plain" | "light" | "brand" | "dark";
+  spacing?: "compact" | "standard" | "tall";
+  width?: "narrow" | "standard" | "wide";
+  textAlign?: "left" | "center" | "right";
+  columns?: "2" | "3" | "4";
+  cardStyle?: "plain" | "bordered" | "elevated";
   eyebrow?: string;
   title?: string;
   body?: string;
