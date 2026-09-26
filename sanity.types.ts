@@ -210,6 +210,30 @@ export type PortableContent = Array<
   | ({
       _key: string;
     } & ImageWithAlt)
+  | {
+      tone?: "note" | "tip" | "warning";
+      title?: string;
+      body?: string;
+      _type: "callout";
+      _key: string;
+    }
+  | {
+      action?: Link;
+      variant?: "primary" | "secondary";
+      _type: "contentAction";
+      _key: string;
+    }
+  | {
+      label?: string;
+      _type: "divider";
+      _key: string;
+    }
+  | {
+      quote?: string;
+      attribution?: string;
+      _type: "pullQuote";
+      _key: string;
+    }
 >;
 
 export type SanityImageAssetReference = {
