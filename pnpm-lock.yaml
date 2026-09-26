@@ -110,14 +110,14 @@ importers:
   .:
     dependencies:
       '@laptopclub/foundation-analytics':
-        specifier: 0.1.9
-        version: 0.1.9(next@16.3.5(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        specifier: 0.1.10
+        version: 0.1.10(next@16.3.5(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@laptopclub/foundation-cms':
-        specifier: 0.1.9
-        version: 0.1.9(next-sanity@13.3.4(5bd7ed170222ff4b9b99e344f958c099))(sanity@6.13.2(@babel/core@7.29.7(supports-color@8.1.1))(@babel/runtime@7.29.7)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.2.4(@babel/core@7.29.7(supports-color@8.1.1))(@babel/runtime@7.29.7)(rolldown@1.2.9)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.1)))(@sanity/sdk@3.3.0(@types/react@19.3.0)(react@19.3.0)(use-sync-external-store@1.7.0(react@19.3.0))(xstate@5.33.2))(@types/node@24.13.4)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rolldown@1.2.9)(styled-components@6.5.3(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(tsx@4.23.13)(typescript@5.9.3))
+        specifier: 0.1.10
+        version: 0.1.10(next-sanity@13.3.4(5bd7ed170222ff4b9b99e344f958c099))(sanity@6.13.2(@babel/core@7.29.7(supports-color@8.1.1))(@babel/runtime@7.29.7)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.2.4(@babel/core@7.29.7(supports-color@8.1.1))(@babel/runtime@7.29.7)(rolldown@1.2.9)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.1)))(@sanity/sdk@3.3.0(@types/react@19.3.0)(react@19.3.0)(use-sync-external-store@1.7.0(react@19.3.0))(xstate@5.33.2))(@types/node@24.13.4)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rolldown@1.2.9)(styled-components@6.5.3(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(tsx@4.23.13)(typescript@5.9.3))
       '@laptopclub/foundation-ui':
-        specifier: 0.1.9
-        version: 0.1.9(next@16.3.5(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+        specifier: 0.1.10
+        version: 0.1.10(next@16.3.5(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@sanity/image-url':
         specifier: 2.1.1
         version: 2.1.1
@@ -147,8 +147,8 @@ importers:
         specifier: 3.3.7
         version: 3.3.7(supports-color@8.1.1)
       '@laptopclub/foundation-config':
-        specifier: 0.1.9
-        version: 0.1.9(tailwindcss@3.4.19(tsx@4.23.13)(yaml@2.9.1))
+        specifier: 0.1.10
+        version: 0.1.10(tailwindcss@3.4.19(tsx@4.23.13)(yaml@2.9.1))
       '@tailwindcss/typography':
         specifier: 0.5.20
         version: 0.5.20(tailwindcss@3.4.19(tsx@4.23.13)(yaml@2.9.1))
@@ -1629,25 +1629,25 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@laptopclub/foundation-analytics@0.1.9':
-    resolution: {integrity: sha512-lni9hmrzZh07DC2V5S2dAQZXxRf9y4lCBsI0VgU6bUcigIld1tFgGgte/brAVNUrmD1HPYe//UgcTt5YDk5rng==, tarball: https://npm.pkg.github.com/download/@laptopclub/foundation-analytics/0.1.9/25151fe91f0fa693b6383ae06ce5044669f971e3}
+  '@laptopclub/foundation-analytics@0.1.10':
+    resolution: {integrity: sha512-0CXKiJf/BeteRPzpfu8HTspE8pL6FzQDIzc161ervSFHJnMf5LmRRIRGT0bWNE0HzHxn4QnMnWja40uuXiKZlg==, tarball: https://npm.pkg.github.com/download/@laptopclub/foundation-analytics/0.1.10/182f913cb82dfbd901764a39132f979e4d89f6a8}
     peerDependencies:
       next: ^15.0.0 || ^16.0.0
       react: ^19.0.0
 
-  '@laptopclub/foundation-cms@0.1.9':
-    resolution: {integrity: sha512-/CrMPyCC93cHbYk6oF7rEoxQvyXmnw6vSk1fDTgSoNdTKKFMadXCrcItvjYIArDtPkOg/D6+p1/AORpeMKizEQ==, tarball: https://npm.pkg.github.com/download/@laptopclub/foundation-cms/0.1.9/771c81aeb5b295494d9ae620d1e5e818db01a332}
+  '@laptopclub/foundation-cms@0.1.10':
+    resolution: {integrity: sha512-6fopdh+4kqaM7qd/uwKEu7DkMl0HJTIdAd1nE4NmJe/r6dHhfdpAKBFWDR42lG3WUr2ON+k+FyRRvihElfd97g==, tarball: https://npm.pkg.github.com/download/@laptopclub/foundation-cms/0.1.10/f433a4aa9a54ef7405f4fc956c9b331e0202eafd}
     peerDependencies:
       next-sanity: ^13.0.0
       sanity: ^6.0.0
 
-  '@laptopclub/foundation-config@0.1.9':
-    resolution: {integrity: sha512-GcuzOnuHedTUBUqbKfrQZnElP4P025iOYUF1etG4yYo1RJl/9MOLA2V+GGHsahtMrb3//PNiNqy2BdwBstxUNw==, tarball: https://npm.pkg.github.com/download/@laptopclub/foundation-config/0.1.9/7073f11c3f39b7aae9497ac63620b4285e439b45}
+  '@laptopclub/foundation-config@0.1.10':
+    resolution: {integrity: sha512-7WFHiajQNt3oJutrV0uo3hjDdr7jxTCnu9vuVEGVPYt+ZGkLDS0zB8/PGqMU71kCZ+g5CxVSPSufV3h+H7Zc4Q==, tarball: https://npm.pkg.github.com/download/@laptopclub/foundation-config/0.1.10/9c354a92c5d53b3b2c239209b4ad136b21fe8bdf}
     peerDependencies:
       tailwindcss: ^3.4.0
 
-  '@laptopclub/foundation-ui@0.1.9':
-    resolution: {integrity: sha512-m9BsIrewCEuEMhATImRX3Gy4vGKZDVgkVsBiwloXgPamfA2s0bE1x9PwHxQjCQTFGq15V70xyA4FahxtdH9Rzw==, tarball: https://npm.pkg.github.com/download/@laptopclub/foundation-ui/0.1.9/40d2584d1476f751548a5a06addb4c5cf8d146f1}
+  '@laptopclub/foundation-ui@0.1.10':
+    resolution: {integrity: sha512-XV6hcCqbHOGQk+MNUrwZDKtw4pFECnLI9eZs6YwgKqk1rSVrZ+S6AtV8jUdOqc/fNC8Twt2aUIR7FdYrdv/dCQ==, tarball: https://npm.pkg.github.com/download/@laptopclub/foundation-ui/0.1.10/be7daecd4232964dab3c52f10aac1b3daedf706c}
     peerDependencies:
       next: ^16.0.0
       react: ^19.0.0
@@ -7527,21 +7527,21 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.6.0
 
-  '@laptopclub/foundation-analytics@0.1.9(next@16.3.5(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
+  '@laptopclub/foundation-analytics@0.1.10(next@16.3.5(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
     dependencies:
       next: 16.3.5(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       react: 19.3.0
 
-  '@laptopclub/foundation-cms@0.1.9(next-sanity@13.3.4(5bd7ed170222ff4b9b99e344f958c099))(sanity@6.13.2(@babel/core@7.29.7(supports-color@8.1.1))(@babel/runtime@7.29.7)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.2.4(@babel/core@7.29.7(supports-color@8.1.1))(@babel/runtime@7.29.7)(rolldown@1.2.9)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.1)))(@sanity/sdk@3.3.0(@types/react@19.3.0)(react@19.3.0)(use-sync-external-store@1.7.0(react@19.3.0))(xstate@5.33.2))(@types/node@24.13.4)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rolldown@1.2.9)(styled-components@6.5.3(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(tsx@4.23.13)(typescript@5.9.3))':
+  '@laptopclub/foundation-cms@0.1.10(next-sanity@13.3.4(5bd7ed170222ff4b9b99e344f958c099))(sanity@6.13.2(@babel/core@7.29.7(supports-color@8.1.1))(@babel/runtime@7.29.7)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.2.4(@babel/core@7.29.7(supports-color@8.1.1))(@babel/runtime@7.29.7)(rolldown@1.2.9)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.1)))(@sanity/sdk@3.3.0(@types/react@19.3.0)(react@19.3.0)(use-sync-external-store@1.7.0(react@19.3.0))(xstate@5.33.2))(@types/node@24.13.4)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rolldown@1.2.9)(styled-components@6.5.3(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(tsx@4.23.13)(typescript@5.9.3))':
     dependencies:
       next-sanity: 13.3.4(5bd7ed170222ff4b9b99e344f958c099)
       sanity: 6.13.2(@babel/core@7.29.7(supports-color@8.1.1))(@babel/runtime@7.29.7)(@noble/hashes@2.4.0)(@rolldown/plugin-babel@0.2.4(@babel/core@7.29.7(supports-color@8.1.1))(@babel/runtime@7.29.7)(rolldown@1.2.9)(vite@8.3.0(@types/node@24.13.4)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.1)))(@sanity/sdk@3.3.0(@types/react@19.3.0)(react@19.3.0)(use-sync-external-store@1.7.0(react@19.3.0))(xstate@5.33.2))(@types/node@24.13.4)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rolldown@1.2.9)(styled-components@6.5.3(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(tsx@4.23.13)(typescript@5.9.3)
 
-  '@laptopclub/foundation-config@0.1.9(tailwindcss@3.4.19(tsx@4.23.13)(yaml@2.9.1))':
+  '@laptopclub/foundation-config@0.1.10(tailwindcss@3.4.19(tsx@4.23.13)(yaml@2.9.1))':
     dependencies:
       tailwindcss: 3.4.19(tsx@4.23.13)(yaml@2.9.1)
 
-  '@laptopclub/foundation-ui@0.1.9(next@16.3.5(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
+  '@laptopclub/foundation-ui@0.1.10(next@16.3.5(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@24.13.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
     dependencies:
       '@portabletext/react': 3.2.4(react@19.3.0)
       '@portabletext/types': 2.0.15
