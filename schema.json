@@ -2488,6 +2488,27 @@
             "type": "boolean"
           },
           "optional": true
+        },
+        "variant": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "union",
+            "of": [
+              {
+                "type": "string",
+                "value": "primary"
+              },
+              {
+                "type": "string",
+                "value": "secondary"
+              },
+              {
+                "type": "string",
+                "value": "inverse"
+              }
+            ]
+          },
+          "optional": true
         }
       }
     }
