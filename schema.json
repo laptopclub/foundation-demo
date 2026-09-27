@@ -46,10 +46,6 @@
               {
                 "type": "string",
                 "value": "standard"
-              },
-              {
-                "type": "string",
-                "value": "wide"
               }
             ]
           },

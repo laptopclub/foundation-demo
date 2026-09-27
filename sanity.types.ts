@@ -20,7 +20,7 @@ export type RichTextBlock = {
   eyebrow?: string;
   title?: string;
   content?: PortableContent;
-  width?: "narrow" | "standard" | "wide";
+  width?: "narrow" | "standard";
   background?: "plain" | "light" | "brand" | "dark";
   spacing?: "compact" | "standard" | "tall";
   textSize?: "standard" | "large";
