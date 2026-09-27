@@ -179,6 +179,13 @@ export type PageReference = {
   [internalGroqTypeReferenceTo]?: "page";
 };
 
+export type SanityImageAssetReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+};
+
 export type PortableContent = Array<
   | {
       children?: Array<{
@@ -211,6 +218,19 @@ export type PortableContent = Array<
       _key: string;
     } & ImageWithAlt)
   | {
+      asset?: SanityImageAssetReference;
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      alt?: string;
+      caption?: string;
+      width?: "narrow" | "standard" | "full";
+      align?: "left" | "center" | "right";
+      shape?: "square" | "rounded" | "soft";
+      _type: "portableImage";
+      _key: string;
+    }
+  | {
       tone?: "note" | "tip" | "warning";
       title?: string;
       body?: string;
@@ -235,13 +255,6 @@ export type PortableContent = Array<
       _key: string;
     }
 >;
-
-export type SanityImageAssetReference = {
-  _ref: string;
-  _type: "reference";
-  _weak?: boolean;
-  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-};
 
 export type ImageWithAlt = {
   _type: "imageWithAlt";
@@ -464,8 +477,8 @@ export type AllSanitySchemaTypes =
   | CtaBlock
   | HeroBlock
   | PageReference
-  | PortableContent
   | SanityImageAssetReference
+  | PortableContent
   | ImageWithAlt
   | Seo
   | Link
