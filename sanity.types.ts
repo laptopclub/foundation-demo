@@ -280,6 +280,7 @@ export type Link = {
   page?: PageReference;
   href?: string;
   openInNewTab?: boolean;
+  variant?: "primary" | "secondary" | "inverse";
 };
 
 export type SiteSettings = {
