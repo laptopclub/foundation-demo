@@ -15,9 +15,9 @@
     "check:a11y:browser": "playwright test --config playwright-a11y.config.ts"
   },
   "dependencies": {
-    "@laptopclub/foundation-analytics": "0.1.27",
-    "@laptopclub/foundation-cms": "0.1.27",
-    "@laptopclub/foundation-ui": "0.1.27",
+    "@laptopclub/foundation-analytics": "0.1.29",
+    "@laptopclub/foundation-cms": "0.1.29",
+    "@laptopclub/foundation-ui": "0.1.29",
     "@sanity/image-url": "2.1.1",
     "@sanity/vision": "6.13.2",
     "next": "16.3.5",
@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "3.3.7",
-    "@laptopclub/foundation-config": "0.1.27",
+    "@laptopclub/foundation-config": "0.1.29",
     "@tailwindcss/typography": "0.5.20",
     "@types/node": "24.13.4",
     "@types/react": "19.3.0",
